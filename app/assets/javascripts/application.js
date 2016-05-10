@@ -14,3 +14,34 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  fetchIdeas();
+  createIdea();
+});
+
+function createIdea() {
+  $('#create').on('click', function() {
+    console.log('hey')
+    var postParams = {
+      title: $('#idea-title').val(),
+      body: $('#idea-body').val(),
+    }
+    postIdea(postParams)
+  })
+}
+
+function postIdea(postParams) {
+  $.ajax({
+    url: '/api/v1/ideas',
+    type: 'POST',
+    data: { postParams },
+    success: function(idea) {
+      renderIdea(idea)
+    },
+    error: function(xhr) {
+      console.log(xhr)
+    }
+  })
+}
