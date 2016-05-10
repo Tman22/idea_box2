@@ -1,11 +1,11 @@
 var deleteListener = function() {
   $('.ideas').delegate('.delete', 'click', function() {
     var ideaId = $(this).parent().attr('id').split('-')[1]
-    ajaxDelete(ideaId);
+    deleteIdea(ideaId);
   })
 }
 
-var ajaxDelete = function(id) {
+var deleteIdea = function(id) {
   return $.ajax({
     url: '/api/v1/ideas/' + id,
     type: 'DELETE',
