@@ -1,4 +1,4 @@
-function renderIdea(idea) {
+var renderIdea = function(idea) {
   $('.ideas').append(
     "<div id='idea-" + idea.id + "'><h1>" + idea.title + "</h1>" +
     "<h2>" + idea.quality + "</h2>" +
@@ -8,7 +8,7 @@ function renderIdea(idea) {
   )
 }
 
-function fetchIdeas() {
+var fetchIdeas = function() {
   $.getJSON('/api/v1/ideas/', function(data) {
     $.each(data, function(index, idea) {
       renderIdea(idea);

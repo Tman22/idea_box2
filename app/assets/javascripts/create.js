@@ -1,4 +1,4 @@
-function createIdea() {
+var createIdea = function() {
   $('#create').on('click', function() {
     var postParams = {
       title: $('#idea-title').val(),
@@ -8,7 +8,7 @@ function createIdea() {
   })
 }
 
-function postIdea(postParams) {
+var postIdea = function(postParams) {
   $.ajax({
     url: '/api/v1/ideas',
     type: 'POST',
