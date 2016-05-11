@@ -1,5 +1,5 @@
 var renderIdea = function(idea) {
-  $('.ideas').append(
+  $('.ideas').prepend(
     "<div class='idea' id='idea-" + idea.id + "'>" +
     "<h1 id='title' class='content' contentEditable='true'>" + idea.title + "</h1>" +
     "<button class='thumbs-up'>UP</button> " +
@@ -17,4 +17,10 @@ var fetchIdeas = function() {
       renderIdea(idea);
     })
   });
+}
+
+var fetchSingleIdea = function(id) {
+  $.getJSON('/api/v1/ideas/' + id, function(data) {
+    $('#idea-' + id).replaceWith(renderIdea(data))
+  })
 }

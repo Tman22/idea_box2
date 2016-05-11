@@ -1,8 +1,8 @@
 <h1>IdeaBox2.0</h1>
-  <input type='text' id='search' value='Search'>
+  <%= text_field_tag(:search, nil, placeholder: 'Search') %>
   <div class='creating'>
-    Title:<input type='text' id='idea-title'>
-    Body:<input type='text' id='idea-body'>
+    <%= text_field_tag(:title, nil, placeholder: 'Title', id:'idea-title') %>
+    <%= text_area_tag(:body, nil, placeholder: 'Body', id:'idea-body') %>
     <input type='button' value='Create' id='create'>
   </div>
 <div class='ideas' id='ideas'>
