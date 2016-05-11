@@ -12,21 +12,23 @@ var qualityControl = function(target, type, type2, type3 ) {
     var id = $(this).parent().attr('id').split('-')[1]
     if(status.text() === type) {
       status.text(type2);
-      postQuality(id, status);
+      var postParams = {quality: status.text()}
+      updateIdea(id, postParams);
     } else if(status.text() === type2) {
       status.text(type3)
-      postQuality(id, status);
+      var postParams = {quality: status.text()}
+      updateIdea(id, postParams);
     } else {
       alert('There is no where else to go!')
     }
   })
 }
 
-var postQuality = function(id, quality) {
+var updateIdea = function(id, postParams) {
   $.ajax({
     url: '/api/v1/ideas/' + id,
     type: 'PUT',
-    data: { postParams: { quality: quality.text() } },
+    data: { postParams },
     success: function() {
       console.log('success')
     }

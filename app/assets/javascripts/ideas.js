@@ -1,11 +1,11 @@
 var renderIdea = function(idea) {
   $('.ideas').append(
     "<div class='idea' id='idea-" + idea.id + "'>" +
-    "<h1 class='content'>" + idea.title + "</h1>" +
+    "<h1 id='title' class='content' contentEditable='true'>" + idea.title + "</h1>" +
     "<button class='thumbs-up'>UP</button> " +
     "<h2>" + idea.quality + "</h2>" +
     "<button class='thumbs-down'>Down</button>" +
-    "<p class='content'>" + idea.body + "</p>" +
+    "<p id='body' class='content' contentEditable='true'>" + idea.body + "</p>" +
     "<button class='delete'>Delete</button>" +
     "</div>"
   )

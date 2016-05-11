@@ -23,4 +23,19 @@ $(document).ready(function() {
   searchListener();
   thumbsUp();
   thumbsDown();
+  editInline();
 });
+
+var editInline = function() {
+  $('.ideas').delegate('.content', 'click', function() {
+    var id = $(this).parent().attr('id').split('-')[1]
+    $(this).focusout(function(){
+      if(this.id === 'title') {
+        var postParams = {title: $(this).text() }
+      } else {
+        var postParams = {body: $(this).text() }
+      }
+      updateIdea(id, postParams)
+    })
+  })
+}
