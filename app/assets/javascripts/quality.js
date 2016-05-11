@@ -10,11 +10,11 @@ var qualityControl = function(target, type, type2, type3 ) {
   $('.ideas').delegate(target, 'click', function() {
     var status = $(this).siblings('h2')
     var id = $(this).parent().attr('id').split('-')[1]
-    something(id, type, type2, type3, status)
+    qualityLogic(id, type, type2, type3, status)
   })
 }
 
-var something = function(id, type, type2, type3, status) {
+var qualityLogic = function(id, type, type2, type3, status) {
   if(status.text() === type) {
     status.text(type2);
     var postParams = {quality: status.text()}

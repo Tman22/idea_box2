@@ -25,6 +25,6 @@ var enterListener = function(target, id) {
 
 var updating = function(target, id){
   var postParams = { };
-  postParams[this.id] = $(this).text();
+  postParams[target.id] = $(target).text();
   updateIdea(id, postParams);
 }
