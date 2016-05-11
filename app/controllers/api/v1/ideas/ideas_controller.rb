@@ -2,7 +2,7 @@ class Api::V1::Ideas::IdeasController < Api::ApiController
   respond_to :json
 
   def index
-    respond_with Idea.all
+    respond_with Idea.ordered_list
   end
 
   def show

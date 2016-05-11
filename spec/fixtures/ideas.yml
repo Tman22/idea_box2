@@ -1,0 +1,9 @@
+one:
+  id: 1
+  title: 'Bruce Wayne'
+  body: 'Darkness, parents gone, darkness'
+
+two: 
+  id: 2
+  title: 'Clark Kent'
+  body: 'My whole planet is gone, boowho'
