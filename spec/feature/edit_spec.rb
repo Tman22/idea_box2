@@ -11,6 +11,8 @@ RSpec.feature 'Edit', type: :feature do
     within("#idea-#{idea.id}") do
       click_on('UP')
     end
+    
+    sleep 2
 
     expect(page).to have_content('Clark KentA')
     expect(Idea.last.title).to eq('Clark KentA')
