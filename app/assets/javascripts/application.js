@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+var counter = 1;
 
 $(document).ready(function() {
   fetchIdeas();
@@ -23,4 +24,5 @@ $(document).ready(function() {
   thumbsUp();
   thumbsDown();
   editInline();
+  sortIdeas();
 });

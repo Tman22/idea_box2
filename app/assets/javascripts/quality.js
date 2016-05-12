@@ -8,7 +8,7 @@ var thumbsDown = function() {
 
 var qualityControl = function(target, type, type2, type3 ) {
   $('.ideas').delegate(target, 'click', function() {
-    var status = $(this).siblings('h2');
+    var status = $(this).siblings('h4');
     var id = $(this).parent().attr('id').split('-')[1];
     qualityLogic(id, target, status);
   })

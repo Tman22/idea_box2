@@ -1,9 +1,12 @@
-<h1>IdeaBox2.0</h1>
-  <%= text_field_tag(:search, nil, placeholder: 'Search') %>
-  <div class='creating'>
-    <%= text_field_tag(:title, nil, placeholder: 'Title', id:'idea-title') %>
-    <%= text_area_tag(:body, nil, placeholder: 'Body', id:'idea-body') %>
-    <input type='button' value='Create' id='create'>
+<div class="container center">
+  <h1>IdeaBox2.0</h1>
+    <%= text_field_tag(:search, nil, placeholder: 'Search') %>
+    <input type='button' value='Sort' id='sort' class='btn btn-default btn-xs'>
+    <div class='creating'>
+      <%= text_field_tag(:title, nil, placeholder: 'Title', id:'idea-title') %>
+      <%= text_area_tag(:body, nil, placeholder: 'Body', id:'idea-body') %>
+      <input type='button' value='Create' id='create' class='btn btn-default btn-xs'>
+    </div>
+  <div class='ideas' id='ideas'>
   </div>
-<div class='ideas' id='ideas'>
 </div>
