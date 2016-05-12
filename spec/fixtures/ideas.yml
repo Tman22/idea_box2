@@ -2,8 +2,10 @@ one:
   id: 1
   title: 'Bruce Wayne'
   body: 'Darkness, parents gone, darkness'
-
-two: 
+  quality: 'cool'
+  
+two:
   id: 2
   title: 'Clark Kent'
-  body: 'My whole planet is gone, boowho'
+  body: 'My whole planet and parents is gone, boowho'
+  quality: 'genius'

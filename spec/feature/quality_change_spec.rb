@@ -6,13 +6,16 @@ RSpec.feature 'Quality', type: :feature do
     idea = ideas(:one)
 
     visit '/'
+
+    expect(page).to have_content('awesome')
     within("#idea-#{idea.id}") do
       click_on('UP')
+      expect(page).to have_content('genius')
     end
+    expect(page).to have_no_content('awesome')
 
     idea = Idea.first
-    expect(page).to have_content('awesome')
-    expect(idea.quality).to eq('awesome')
+    expect(idea.quality).to eq('genius')
   end
 
 
@@ -21,7 +24,6 @@ RSpec.feature 'Quality', type: :feature do
 
     visit '/'
     within("#idea-#{idea.id}") do
-      click_on('UP')
       click_on('Down')
       click_on('Down')
     end
