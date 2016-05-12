@@ -41,10 +41,7 @@ RSpec.describe Api::V1::Ideas::IdeasController, type: :controller do
     it "responds with updated id" do
       idea = {title: 'title'}
       get :update, id: 1, postParams: idea, format: :json
-      idea = JSON.parse(response.body)
 
-      expect(response).to be_success
-      expect(idea['title']).to eq 'title'
       expect(Idea.first.title).to eq 'title'
     end
   end
