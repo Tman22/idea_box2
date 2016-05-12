@@ -5,13 +5,13 @@ var editInline = function() {
     enterListener($target, id);
     clickListener($target, id);
   })
-}
+};
 
 var clickListener = function($target, id) {
   $target.focusout(function(){
     updating($target, id);
   })
-}
+};
 
 var enterListener = function($target, id) {
   $target.keypress(function(e) {
@@ -20,7 +20,7 @@ var enterListener = function($target, id) {
       e.preventDefault();
     }
   })
-}
+};
 
 var updating = function ($target, id) {
   var postParams = { };
@@ -39,4 +39,4 @@ var updateIdea = function(id, postParams) {
       console.log('success')
     }
   })
-}
+};

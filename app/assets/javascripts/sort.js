@@ -9,10 +9,10 @@ var sortIdeas = function() {
     counter += 1;
     if (counter % 2 === 0) {
       $('.ideas').children().remove();
-      $('.ideas').append(sortedIdeas);
+      $('.ideas').prepend(sortedIdeas.reverse());
     } else {
       $('.ideas').children().remove();
-      $('.ideas').prepend(sortedIdeas.reverse());
+      $('.ideas').append(sortedIdeas);
     }
   })
 }
